@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿// MY OWN EXCEPTIONS
 Console.WriteLine("Hello, World!");
