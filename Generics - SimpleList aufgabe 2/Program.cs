@@ -12,7 +12,24 @@ namespace Generics___SimpleList_aufgabe_2
             set.AddMenge(2);
             set.AddMenge(2);
             set.AddMenge(3);
+            set.AddMenge(3);
+            set.AddMenge(4);
             set.ShowList();
+            set.RemoveMenge(3);
+            Console.WriteLine();
+            set.ShowList();
+            set.RemoveMenge(3);
+            Console.WriteLine();
+            set.ShowList();
+            Console.WriteLine();
+            set.SearchMenge(3);
+            Console.WriteLine();
+            set.SearchMenge(4);
+            set.SearchMenge(5);
+            set.SearchMenge(1);
+            Console.WriteLine(set.HowMuchItems());
+            set.AddMenge(3);
+            Console.WriteLine(set.HowMuchItems());
         }
     }
 }
