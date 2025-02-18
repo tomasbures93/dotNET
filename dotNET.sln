@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - einfach verketet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - Set ( Matematische menge )", "Generics - SimpleList aufgabe 2\Generics - Set ( Matematische menge ).csproj", "{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - Flasche", "Generics - Flasche\Generics - Flasche.csproj", "{01C2ECA4-1868-43D0-9D4D-DE073E74DA56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{01C2ECA4-1868-43D0-9D4D-DE073E74DA56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01C2ECA4-1868-43D0-9D4D-DE073E74DA56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01C2ECA4-1868-43D0-9D4D-DE073E74DA56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01C2ECA4-1868-43D0-9D4D-DE073E74DA56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
