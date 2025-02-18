@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegEx - WPF validierung", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - Flasche klass", "Generics - Flasche klass\Generics - Flasche klass.csproj", "{6A78728F-7A35-4AE0-8C62-C058FC814E58}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - einfach verketette list", "Generics - einfach verketette list\Generics - einfach verketette list.csproj", "{61B57C19-FEE3-481E-B9A5-ECD068699879}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - Set ( Matematische menge )", "Generics - SimpleList aufgabe 2\Generics - Set ( Matematische menge ).csproj", "{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{6A78728F-7A35-4AE0-8C62-C058FC814E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A78728F-7A35-4AE0-8C62-C058FC814E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A78728F-7A35-4AE0-8C62-C058FC814E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61B57C19-FEE3-481E-B9A5-ECD068699879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61B57C19-FEE3-481E-B9A5-ECD068699879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61B57C19-FEE3-481E-B9A5-ECD068699879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61B57C19-FEE3-481E-B9A5-ECD068699879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{090D7A91-18B5-40C7-A8D0-185BA4B5F0AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
