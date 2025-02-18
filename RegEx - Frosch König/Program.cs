@@ -58,7 +58,7 @@ namespace RegEx___Frosch_König
             foreach(string inhalt in text)
             {
                 count++;
-                if(Regex.IsMatch(inhalt, @"^[A-Z]"))
+                if (Regex.IsMatch(inhalt, @"^[A-Z]"))
                 {
                     Console.WriteLine($"Line {count} - {inhalt}");
                 }

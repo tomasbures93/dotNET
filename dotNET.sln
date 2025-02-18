@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dotNET - Exceptions", "dotNET - Exceptions\dotNET - Exceptions.csproj", "{C8C98BD1-E0D6-4347-971E-C04BF21F8936}"
 EndProject
@@ -12,6 +12,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions - Trainstation", "Exceptions - Trainstation\Exceptions - Trainstation.csproj", "{8585C5CA-9A8D-41A6-85C7-F74D9CCD2357}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegEx - Frosch König", "RegEx - Frosch König\RegEx - Frosch König.csproj", "{54E41545-36BA-4DF2-8F4A-E8848A559912}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegEx - WPF validierung", "RegEx - WPF validierung\RegEx - WPF validierung.csproj", "{06EA3EE8-39CA-4E42-9A9B-BB24381A3DE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - Flasche klass", "Generics - Flasche klass\Generics - Flasche klass.csproj", "{6A78728F-7A35-4AE0-8C62-C058FC814E58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{54E41545-36BA-4DF2-8F4A-E8848A559912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{54E41545-36BA-4DF2-8F4A-E8848A559912}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{54E41545-36BA-4DF2-8F4A-E8848A559912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06EA3EE8-39CA-4E42-9A9B-BB24381A3DE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06EA3EE8-39CA-4E42-9A9B-BB24381A3DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06EA3EE8-39CA-4E42-9A9B-BB24381A3DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06EA3EE8-39CA-4E42-9A9B-BB24381A3DE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A78728F-7A35-4AE0-8C62-C058FC814E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A78728F-7A35-4AE0-8C62-C058FC814E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A78728F-7A35-4AE0-8C62-C058FC814E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A78728F-7A35-4AE0-8C62-C058FC814E58}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
