@@ -30,8 +30,6 @@ namespace Extra___ChecksumCalculator.Models
 
         public override bool Validate(string nummer)
         {
-            if (this.IsNumeric(nummer))
-            {
                 char pruffdigit = nummer[^1];
                 int pruefSumme = int.Parse(pruffdigit.ToString()), hilfe = 0, zwischensumme = 0, modulo = 0, zwischenrechnung = 0, pruefziffer = 0;
                 string digits = nummer.Substring(0, nummer.Length - 1);
@@ -86,17 +84,10 @@ namespace Extra___ChecksumCalculator.Models
                 {
                     return false;
                 }
-            }
-            else
-            {
-                return false;
-            }
         }
 
         public override string CalculateCheckDigit(string nummer)
         {
-            if (this.IsNumeric(nummer))
-            {
                 int hilfe = 0, zwischensumme = 0, modulo = 0, zwischenrechnung = 0, pruefsumme = 0;
                 string text = "";
                 int[] array = new int[nummer.Length];
@@ -144,11 +135,6 @@ namespace Extra___ChecksumCalculator.Models
                     pruefsumme = naechsteZehnerzahl - zwischensumme;
                     return $"{pruefsumme}";
                 }
-            }
-            else
-            {
-                return "";
-            }
         }
 
     }

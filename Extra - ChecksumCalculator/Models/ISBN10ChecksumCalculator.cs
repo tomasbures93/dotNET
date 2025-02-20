@@ -35,8 +35,6 @@ namespace Extra___ChecksumCalculator.Models
 
         public override bool Validate(string nummer)
         {
-            if (this.IsNumeric(nummer))
-            {
                 char pruffdigit = nummer[^1];
                 int pruefSumme = 0, zwischensumme = 0, modulo = 0;
                 string digits = nummer.Substring(0, nummer.Length - 1);
@@ -56,9 +54,9 @@ namespace Extra___ChecksumCalculator.Models
                     array[i] = int.Parse(digits[i].ToString());
                 }
                 // zwischen summe berechnen
-                for(int i = 0; i < array.Length; i++)
+                for(int i = 1; i <= array.Length; i++)
                 {
-                    zwischensumme = zwischensumme + (array[i] * i);
+                    zwischensumme = zwischensumme + (array[i-1] * i);
                 }
                 modulo = zwischensumme % 11;
                 if(modulo == pruefSumme)
@@ -68,17 +66,10 @@ namespace Extra___ChecksumCalculator.Models
                 {
                     return false;
                 }
-            } 
-            else
-            {
-                return false;
-            }
         }
 
         public override string CalculateCheckDigit(string nummer)
         {
-            if (this.IsNumeric(nummer))
-            {
                 int pruefSumme = 0, zwischensumme = 0, modulo = 0;
                 int[] array = new int[nummer.Length];
                 // einzeln in array packen
@@ -87,9 +78,9 @@ namespace Extra___ChecksumCalculator.Models
                     array[i] = int.Parse(nummer[i].ToString());
                 }
                 // zwischen summe berechnen
-                for (int i = 0; i < array.Length; i++)
+                for (int i = 1; i <= array.Length; i++)
                 {
-                    zwischensumme = zwischensumme + (array[i] * i);
+                    zwischensumme = zwischensumme + (array[i-1] * i);
                 }
                 modulo = zwischensumme % 11;
                 if(modulo == 10)
@@ -99,11 +90,6 @@ namespace Extra___ChecksumCalculator.Models
                 {
                     return modulo.ToString();
                 }
-            }
-            else
-            {
-                return "";
-            }
         }
     }
 }

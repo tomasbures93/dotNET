@@ -166,8 +166,7 @@ namespace Extra___ChecksumCalculator
             LuhnChecksumCalculator input = new LuhnChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text) == true)
             {
-                bool validate = input.Validate(inputString.Text);
-                if (validate)
+                if (input.Validate(inputString.Text))
                 {
                     output.Content = "Credit Card is valid";
                     inputString.BorderBrush = Brushes.Green;
@@ -188,8 +187,7 @@ namespace Extra___ChecksumCalculator
             ISBN13ChecksumCalculator input = new ISBN13ChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text))
             {
-                bool validate = input.Validate(inputString.Text);
-                if (validate)
+                if (input.Validate(inputString.Text))
                 {
                     output.Content = "ISBN13 Checksum was succesful!";
                     inputString.BorderBrush = Brushes.Green;
@@ -210,8 +208,7 @@ namespace Extra___ChecksumCalculator
             ISBN10ChecksumCalculator input = new ISBN10ChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text) == true)
             {
-                bool validate = input.Validate(inputString.Text);
-                if (validate)
+                if (input.Validate(inputString.Text))
                 {
                     output.Content = "ISBN10 Checksum was succesful!";
                     inputString.BorderBrush = Brushes.Green;
