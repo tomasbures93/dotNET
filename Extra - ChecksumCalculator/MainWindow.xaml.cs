@@ -16,7 +16,7 @@ namespace Extra___ChecksumCalculator
     {
 
         /*
-         * FAKE NUMMERn zu testen
+         * FAKE NUMMERn zu testen 
          * Kredit karte     1234 5678 9012 3456 	        9
          * ISBN-10          0-306-40615-			        X
          * ISBN-13          978-0-306-40615-		        7
