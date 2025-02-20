@@ -26,57 +26,18 @@ namespace Extra___ChecksumCalculator
             inputString.BorderBrush = Brushes.Black;
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Validate(object sender, RoutedEventArgs e)
         {
-            switch (comboBox.Text)
-            {
-                case "Kreditkartennummer":
-                    ValidateKreditKarte();
-                    break;
-                case "ISBN-10":
-                    ValidateISBN10();
-                    break;
-                case "ISBN-13":
-                    ValidateISBN13();
-                    break;
-            }
+            ValidateSumme();
         }
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        private void Button_Berechne(object sender, RoutedEventArgs e)
         {
-            //switch (comboBox.Text)
-            //{
-            //    case "Kreditkartennummer":
-            //        inputString.BorderBrush = Brushes.Black;
-            //        BerechnePruefSummeKreditkarte();
-            //        break;
-            //    case "ISBN-10":
-            //        inputString.BorderBrush = Brushes.Black;
-            //        BerechnePruefSummeISBN10();
-            //        break;
-            //    case "ISBN-13":
-            //        inputString.BorderBrush = Brushes.Black;
-            //        BerechnePruefSummeISBN13();
-            //        break;
-            //}
             BerechnePruefSumme();
         }
 
         public void BerechnePruefSumme()
         {
-            inputString.BorderBrush = Brushes.Black;
-            output.Content = "";
-            if (string.IsNullOrEmpty(inputString.Text))
-            {
-                return;
-            }
-            if (inputString.Text.Contains("-"))
-            {
-                inputString.Text = inputString.Text.Replace("-", "");
-            }
-            if (inputString.Text.Contains(" "))
-            {
-                inputString.Text = inputString.Text.Replace(" ", "");
-            }
+            ValidateInput();
             switch (comboBox.Text)
             {
                 case "Kreditkartennummer":
@@ -84,7 +45,8 @@ namespace Extra___ChecksumCalculator
                     {
                         output.Content = "Number has to be 16 digits long";
                         return;
-                    } else
+                    } 
+                    else
                     {
                         BerechnePruefSummeKreditkarte();
                     }
@@ -112,39 +74,9 @@ namespace Extra___ChecksumCalculator
             }
         }
 
-        public void BerechnePruefSummeKreditkarte()
+        public void ValidateInput()
         {
-            //output.Content = "";
-            //if (string.IsNullOrEmpty(inputString.Text))
-            //{
-            //    return;
-            //}
-            //if (inputString.Text.Contains("-"))
-            //{
-            //    inputString.Text = inputString.Text.Replace("-", "");
-            //}
-            //if (inputString.Text.Contains(" "))
-            //{
-            //    inputString.Text = inputString.Text.Replace(" ", "");
-            //}
-            //if (inputString.Text.Length != 16)
-            //{
-            //    output.Content = "Number has to be 16 digits long";
-            //    return;
-            //}
-            LuhnChecksumCalculator input = new LuhnChecksumCalculator(inputString.Text);
-            if (input.IsNumeric(inputString.Text) == true)
-            {
-                string pruefsumme = input.CalculateCheckDigit(inputString.Text);
-                output.Content = $"Your Prüfziffer is {pruefsumme}";
-            }
-            else
-            {
-                output.Content = "Wrong input";
-            }
-        }
-        public void ValidateKreditKarte()
-        {
+            inputString.BorderBrush = Brushes.Black;
             output.Content = "";
             if (string.IsNullOrEmpty(inputString.Text))
             {
@@ -158,11 +90,60 @@ namespace Extra___ChecksumCalculator
             {
                 inputString.Text = inputString.Text.Replace(" ", "");
             }
-            if (inputString.Text.Length != 17)
+        }
+
+        public void ValidateSumme()
+        {
+            ValidateInput();
+            switch (comboBox.Text)
             {
-                output.Content = "Number has to be 17 digits long";
-                return;
+                case "Kreditkartennummer":
+                    if (inputString.Text.Length != 17)
+                    {
+                        output.Content = "Number has to be 17 digits long";
+                        return;
+                    }
+                    else
+                    {
+                        ValidateKreditKarte();
+                    }
+                    break;
+                case "ISBN-10":
+                    if (inputString.Text.Length != 10)
+                    {
+                        output.Content = "Number has to be 10 digits long";
+                        return;
+                    }
+                    else
+                    {
+                        ValidateISBN10();
+                    }
+                    break;
+                case "ISBN-13":
+                    if (inputString.Text.Length != 13)
+                    {
+                        output.Content = "Number has to be 13 digits long";
+                        return;
+                    }
+                    else
+                    {
+                        ValidateISBN13();
+                    }
+                    break;
             }
+        }
+
+        public void BerechnePruefSummeKreditkarte()
+        {
+            LuhnChecksumCalculator input = new LuhnChecksumCalculator(inputString.Text);
+            if (input.IsNumeric(inputString.Text) == true)
+            {
+                string pruefsumme = input.CalculateCheckDigit(inputString.Text);
+                output.Content = $"Your Checksum is {pruefsumme}";
+            }
+        }
+        public void ValidateKreditKarte()
+        {
             LuhnChecksumCalculator input = new LuhnChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text) == true)
             {
@@ -178,51 +159,23 @@ namespace Extra___ChecksumCalculator
                     inputString.BorderBrush = Brushes.Red;
                 }
             }
+            else
+            {
+                output.Content = "Wrong input!";
+            }
         }
 
         private void BerechnePruefSummeISBN13()
         {
-            //output.Content = "";
-            //if (string.IsNullOrEmpty(inputString.Text))
-            //{
-            //    return;
-            //}
-            //if (inputString.Text.Contains("-"))
-            //{
-            //    inputString.Text = inputString.Text.Replace("-", "");
-            //}
-            //if (inputString.Text.Length != 12)
-            //{
-            //    output.Content = "Number has to be 12 digits long";
-            //    return;
-            //}
             ISBN13ChecksumCalculator input = new ISBN13ChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text) == true)
             {
                 string pruefsumme = input.CalculateCheckDigit(inputString.Text);
-                output.Content = $"Your Prüfziffer is {pruefsumme}";
-            }
-            else
-            {
-                output.Content = "Wrong input";
+                output.Content = $"Your Checksum is {pruefsumme}";
             }
         }
         private void ValidateISBN13()
         {
-            output.Content = "";
-            if (string.IsNullOrEmpty(inputString.Text))
-            {
-                return;
-            }
-            if (inputString.Text.Contains("-"))
-            {
-                inputString.Text = inputString.Text.Replace("-", "");
-            }
-            if (inputString.Text.Length != 13)
-            {
-                output.Content = "Number has to be 13 digits long";
-                return;
-            }
             ISBN13ChecksumCalculator input = new ISBN13ChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text))
             {
@@ -240,53 +193,21 @@ namespace Extra___ChecksumCalculator
             }
             else
             {
-                output.Content = "Wrong input";
+                output.Content = "Wrong input!";
             }
         }
         private void BerechnePruefSummeISBN10()
         {
-            //output.Content = "";
-            //if (string.IsNullOrEmpty(inputString.Text))
-            //{
-            //    return;
-            //}
-            //if (inputString.Text.Contains("-"))
-            //{
-            //    inputString.Text = inputString.Text.Replace("-", "");
-            //}
-            //if (inputString.Text.Length != 9)
-            //{
-            //    output.Content = "Number has to be 9 digits long";
-            //    return;
-            //}
             ISBN10ChecksumCalculator input = new ISBN10ChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text) == true)
             {
                 string pruefsumme = input.CalculateCheckDigit(inputString.Text);
-                output.Content = $"Your Prüfziffer is {pruefsumme}";
-            }
-            else
-            {
-                output.Content = "Wrong input";
+                output.Content = $"Your Checksum is {pruefsumme}";
             }
         }
 
         private void ValidateISBN10()
         {
-            output.Content = "";
-            if (string.IsNullOrEmpty(inputString.Text))
-            {
-                return;
-            }
-            if (inputString.Text.Contains("-"))
-            {
-                inputString.Text = inputString.Text.Replace("-", "");
-            }
-            if (inputString.Text.Length != 10)
-            {
-                output.Content = "Number has to be 10 digits long";
-                return;
-            }
             ISBN10ChecksumCalculator input = new ISBN10ChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text) == true)
             {
@@ -304,7 +225,7 @@ namespace Extra___ChecksumCalculator
             }
             else
             {
-                output.Content = "Wrong input";
+                output.Content = "Wrong input!";
             }
         }
     }
