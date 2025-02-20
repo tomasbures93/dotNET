@@ -59,7 +59,6 @@ namespace Extra___ChecksumCalculator.Models
                         {
                             if (array[i] * 2 > 9)
                             {
-                                // wenn mehr als 10
                                 hilfe = array[i] * 2;
                                 text = hilfe.ToString();
                                 zwischensumme = zwischensumme + int.Parse(text[0].ToString()) + int.Parse(text[1].ToString());
@@ -71,7 +70,6 @@ namespace Extra___ChecksumCalculator.Models
                         }
                     }
                 }
-                zwischensumme = zwischensumme;
                 if (zwischensumme % 10 == 0)
                 {
                     pruefziffer = 0;

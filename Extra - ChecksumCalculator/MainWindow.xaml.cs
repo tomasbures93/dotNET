@@ -14,18 +14,23 @@ namespace Extra___ChecksumCalculator
 {
     public partial class MainWindow : Window
     {
+
+        /*
+         * FAKE NUMMER zu testen
+         * Kredit karte - 1234 5678 9012 3456 	    9
+         * ISBN-10 - 0-306-40615-			        X
+         * ISBN-13 - 978-0-306-40615-		        7
+         */
         public MainWindow()
         {
             InitializeComponent();
         }
-
         private void Button_Clear(object sender, RoutedEventArgs e)
         {
             output.Content = "";
             inputString.Text = "";
             inputString.BorderBrush = Brushes.Black;
         }
-
         private void Button_Validate(object sender, RoutedEventArgs e)
         {
             ValidateSumme();
@@ -34,7 +39,6 @@ namespace Extra___ChecksumCalculator
         {
             BerechnePruefSumme();
         }
-
         public void BerechnePruefSumme()
         {
             ValidateInput();
@@ -73,7 +77,6 @@ namespace Extra___ChecksumCalculator
                     break;
             }
         }
-
         private void ValidateInput()
         {
             inputString.BorderBrush = Brushes.Black;
@@ -91,7 +94,6 @@ namespace Extra___ChecksumCalculator
                 inputString.Text = inputString.Text.Replace(" ", "");
             }
         }
-
         public void ValidateSumme()
         {
             ValidateInput();
@@ -132,10 +134,27 @@ namespace Extra___ChecksumCalculator
                     break;
             }
         }
-
         public void BerechnePruefSummeKreditkarte()
         {
             LuhnChecksumCalculator input = new LuhnChecksumCalculator(inputString.Text);
+            if (input.IsNumeric(inputString.Text) == true)
+            {
+                string pruefsumme = input.CalculateCheckDigit(inputString.Text);
+                output.Content = $"Your Checksum is {pruefsumme}";
+            }
+        }
+        private void BerechnePruefSummeISBN13()
+        {
+            ISBN13ChecksumCalculator input = new ISBN13ChecksumCalculator(inputString.Text);
+            if (input.IsNumeric(inputString.Text) == true)
+            {
+                string pruefsumme = input.CalculateCheckDigit(inputString.Text);
+                output.Content = $"Your Checksum is {pruefsumme}";
+            }
+        }
+        private void BerechnePruefSummeISBN10()
+        {
+            ISBN10ChecksumCalculator input = new ISBN10ChecksumCalculator(inputString.Text);
             if (input.IsNumeric(inputString.Text) == true)
             {
                 string pruefsumme = input.CalculateCheckDigit(inputString.Text);
@@ -164,16 +183,6 @@ namespace Extra___ChecksumCalculator
                 output.Content = "Wrong input!";
             }
         }
-
-        private void BerechnePruefSummeISBN13()
-        {
-            ISBN13ChecksumCalculator input = new ISBN13ChecksumCalculator(inputString.Text);
-            if (input.IsNumeric(inputString.Text) == true)
-            {
-                string pruefsumme = input.CalculateCheckDigit(inputString.Text);
-                output.Content = $"Your Checksum is {pruefsumme}";
-            }
-        }
         private void ValidateISBN13()
         {
             ISBN13ChecksumCalculator input = new ISBN13ChecksumCalculator(inputString.Text);
@@ -196,16 +205,6 @@ namespace Extra___ChecksumCalculator
                 output.Content = "Wrong input!";
             }
         }
-        private void BerechnePruefSummeISBN10()
-        {
-            ISBN10ChecksumCalculator input = new ISBN10ChecksumCalculator(inputString.Text);
-            if (input.IsNumeric(inputString.Text) == true)
-            {
-                string pruefsumme = input.CalculateCheckDigit(inputString.Text);
-                output.Content = $"Your Checksum is {pruefsumme}";
-            }
-        }
-
         private void ValidateISBN10()
         {
             ISBN10ChecksumCalculator input = new ISBN10ChecksumCalculator(inputString.Text);

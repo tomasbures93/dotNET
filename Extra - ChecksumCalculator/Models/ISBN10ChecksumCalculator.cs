@@ -16,8 +16,8 @@ namespace Extra___ChecksumCalculator.Models
 
         public override bool IsNumeric(string nummer)
         {
-            char pruffdigit = nummer[^1];                           // prüf digit
-            string digits = nummer.Substring(0, nummer.Length - 1);       // without prüf digit
+            char pruffdigit = nummer[^1];                           
+            string digits = nummer.Substring(0, nummer.Length - 1);       
             if (digits.Contains("-"))
             {
                 digits = nummer.Replace("-", "");
