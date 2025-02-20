@@ -19,7 +19,7 @@ namespace Extra___ChecksumCalculator
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Clear(object sender, RoutedEventArgs e)
         {
             output.Content = "";
             inputString.Text = "";
@@ -74,7 +74,7 @@ namespace Extra___ChecksumCalculator
             }
         }
 
-        public void ValidateInput()
+        private void ValidateInput()
         {
             inputString.BorderBrush = Brushes.Black;
             output.Content = "";
