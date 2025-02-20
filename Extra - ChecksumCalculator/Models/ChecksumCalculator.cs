@@ -20,6 +20,6 @@ namespace Extra___ChecksumCalculator.Models
 
         public abstract bool Validate(string input);
 
-        public abstract bool CalculateCheckDigit(string input);
+        public abstract string CalculateCheckDigit(string input);
     }
 }

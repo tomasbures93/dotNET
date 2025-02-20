@@ -1,32 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Printing;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Extra___ChecksumCalculator.Models
 {
-    class ISBN10ChecksumCalculator : ChecksumCalculator
+    class ISBN13ChecksumCalculator : ChecksumCalculator
     {
-        public ISBN10ChecksumCalculator(string nummer) : base(nummer)
+        public ISBN13ChecksumCalculator(string nummer) : base(nummer)
         {
 
         }
 
         public override bool IsNumeric(string nummer)
         {
-            char pruffdigit = nummer[^1];                           // prüf digit
-            string digits = nummer.Substring(0, nummer.Length - 1);       // without prüf digit
-            if (digits.Contains("-"))
+            if (nummer.Contains("-"))
             {
-                digits = nummer.Replace("-", "");
-            }                                   
-            if (int.TryParse(digits, out int number) && 
-                ((pruffdigit == 'X' || pruffdigit == 'x') || int.TryParse(pruffdigit.ToString(), out int number2)))
+                nummer = nummer.Replace("-", "");
+            }
+            if(long.TryParse(nummer, out long number))
             {
                 return true;
-            }
+            } 
             else
             {
                 return false;
@@ -38,37 +34,40 @@ namespace Extra___ChecksumCalculator.Models
             if (this.IsNumeric(nummer))
             {
                 char pruffdigit = nummer[^1];
-                int pruefSumme = 0, zwischensumme = 0, modulo = 0;
+                int pruefSumme = int.Parse(pruffdigit.ToString()), zwischensumme = 0, modulo = 0, berechnung = 0;
                 string digits = nummer.Substring(0, nummer.Length - 1);
                 int[] array = new int[digits.Length];
-                // was für pruefsumme haben wir
-                if(pruffdigit ==  'X' || pruffdigit == 'x')
-                {
-                    pruefSumme = 10;
-                } 
-                else
-                {
-                    pruefSumme = int.Parse(pruffdigit.ToString());
-                }
                 // einzeln in array packen
-                for(int i = 0; i < array.Length; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
                     array[i] = int.Parse(digits[i].ToString());
                 }
                 // zwischen summe berechnen
-                for(int i = 0; i < array.Length; i++)
+                for (int i = 0; i < array.Length; i++)
                 {
-                    zwischensumme = zwischensumme + (array[i] * i);
+                    if(i == 0)
+                    {
+                        zwischensumme = zwischensumme + (array[i] * 1);
+                    }
+                    else if(i % 2 != 0)
+                    {
+                        zwischensumme = zwischensumme + (array[i] * 3);
+                    } else
+                    {
+                        zwischensumme = zwischensumme + (array[i] * 1);
+                    }
                 }
-                modulo = zwischensumme % 11;
-                if(modulo == pruefSumme)
+                modulo = zwischensumme % 10;
+                berechnung = 10 - modulo;
+                if (berechnung == pruefSumme)
                 {
                     return true;
-                } else
+                }
+                else
                 {
                     return false;
                 }
-            } 
+            }
             else
             {
                 return false;
@@ -89,16 +88,22 @@ namespace Extra___ChecksumCalculator.Models
                 // zwischen summe berechnen
                 for (int i = 0; i < array.Length; i++)
                 {
-                    zwischensumme = zwischensumme + (array[i] * i);
+                    if (i == 0)
+                    {
+                        zwischensumme = zwischensumme + (array[i] * 1);
+                    }
+                    else if (i % 2 != 0)
+                    {
+                        zwischensumme = zwischensumme + (array[i] * 3);
+                    }
+                    else
+                    {
+                        zwischensumme = zwischensumme + (array[i] * 1);
+                    }
                 }
-                modulo = zwischensumme % 11;
-                if(modulo == 10)
-                {
-                    return "X";
-                } else
-                {
-                    return modulo.ToString();
-                }
+                modulo = zwischensumme % 10;
+                modulo = 10 - modulo;
+                return modulo.ToString();
             }
             else
             {

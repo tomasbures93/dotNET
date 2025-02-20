@@ -9,6 +9,6 @@ namespace Extra___ChecksumCalculator.Interfaces
     interface IChecksumCalculator
     {
         bool Validate(string input);
-        bool CalculateCheckDigit(string input);
+        string CalculateCheckDigit(string input);
     }
 }
