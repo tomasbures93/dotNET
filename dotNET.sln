@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchTree", "BinaryS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extra - ChecksumCalculator", "Extra - ChecksumCalculator\Extra - ChecksumCalculator.csproj", "{D1AB9910-369C-40BE-ADCB-E1DF6526F11C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF - Spaceship simulator", "WPF - Spaceship simulator\WPF - Spaceship simulator.csproj", "{C4AE3000-C34B-47F8-862F-D85E0E4A9775}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{D1AB9910-369C-40BE-ADCB-E1DF6526F11C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1AB9910-369C-40BE-ADCB-E1DF6526F11C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1AB9910-369C-40BE-ADCB-E1DF6526F11C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4AE3000-C34B-47F8-862F-D85E0E4A9775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4AE3000-C34B-47F8-862F-D85E0E4A9775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4AE3000-C34B-47F8-862F-D85E0E4A9775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4AE3000-C34B-47F8-862F-D85E0E4A9775}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

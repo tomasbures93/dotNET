@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <RootNamespace>WPF___Spaceship_simulator</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="550-5507063_8-bit-spaceship-png-transparent-png.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\550-5507063_8-bit-spaceship-png-transparent-png.png" />
+  </ItemGroup>
+
+</Project>

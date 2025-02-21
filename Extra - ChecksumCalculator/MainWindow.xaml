@@ -32,7 +32,7 @@
         <TextBox x:Name="inputString" HorizontalAlignment="Center" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2" Grid.Row="2"/>
         <Button Content="Validate" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="130" Grid.Column="0" Grid.Row="3" Click="Button_Validate"/>
         <Button Content="Calculate Checksum" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="130" Grid.Column="1" Grid.Row="3" Click="Button_Berechne"/>
-        <Label x:Name="output" Content="" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2" Grid.Row="4"/>
+        <Label x:Name="output" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="250" Grid.ColumnSpan="2" Grid.Row="4"/>
         <Button Content="Clear" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Width="65" Grid.ColumnSpan="2" Grid.Row="5" Click="Button_Clear"/>
     </Grid>
 </Window>
