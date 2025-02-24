@@ -69,7 +69,7 @@ namespace Operatoruberladung.Models
                 zwei++;
                 return new ipadresse(ein, zwei, drei, vier);
             }
-            if(ein >= 255)
+            if(ein > 255)
             {
                 Console.WriteLine("NOPE, adresse 256.0.0.0 existiert nicht");
                 ein = 256;
