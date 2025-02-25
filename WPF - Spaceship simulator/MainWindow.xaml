@@ -28,12 +28,12 @@
         
         <!-- Main window -->
         <Grid x:Name="MainView">
-        <Canvas>
-            <Image 
+            <Canvas x:Name="space">
+            <!--<Image 
                 Name="ship" Height="46" Width="86" 
                 Source="Images/550-5507063_8-bit-spaceship-png-transparent-png.png"
                 Canvas.Bottom="20"
-                Canvas.Left="350"/>
+                Canvas.Left="350"/>-->
         </Canvas>
         <Label x:Name="GetL" Content="" HorizontalAlignment="Left" Margin="50,678,0,0" VerticalAlignment="Top"/>
         <Label x:Name="GetB" Content="" HorizontalAlignment="Left" Margin="50,647,0,0" VerticalAlignment="Top"/>

@@ -8,12 +8,14 @@ namespace Operatoruberladung.Models
 {
     internal class ipadresse
     {
-        private ulong _erstOktet;
-        private ulong _zweiteOktet;
-        private ulong _dritteOktet;
-        private ulong _vierteOktet;
+        private uint _erstOktet;
+        private uint _zweiteOktet;
+        private uint _dritteOktet;
+        private uint _vierteOktet;
 
-        public ipadresse(ulong erst, ulong zweitt, ulong dritte, ulong vierte)
+        public ipadresse() { }
+
+        public ipadresse(uint erst, uint zweitt, uint dritte, uint vierte)
         {
             _erstOktet = erst;
             _zweiteOktet = zweitt;
@@ -26,12 +28,78 @@ namespace Operatoruberladung.Models
             return $"{_erstOktet}.{_zweiteOktet}.{_dritteOktet}.{_vierteOktet}";
         }
 
+        public static bool operator >(ipadresse erst, ipadresse zwei)
+        {
+            if(erst._erstOktet > zwei._erstOktet)
+            {
+                return true;
+            } 
+            else
+            {
+                if(erst._zweiteOktet > zwei._zweiteOktet)
+                {
+                    return true;
+                } 
+                else
+                {
+                    if(erst._dritteOktet > zwei._dritteOktet)
+                    {
+                        return true;
+                    } 
+                    else
+                    {
+                        if(erst._vierteOktet > zwei._vierteOktet)
+                        {
+                            return true;
+                        } 
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+
+        public static bool operator <(ipadresse erst, ipadresse zwei)
+        {
+            if (erst._erstOktet < zwei._erstOktet)
+            {
+                return true;
+            }
+            else
+            {
+                if (erst._zweiteOktet < zwei._zweiteOktet)
+                {
+                    return true;
+                }
+                else
+                {
+                    if (erst._dritteOktet < zwei._dritteOktet)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        if (erst._vierteOktet < zwei._vierteOktet)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+        }
+
         public static ipadresse operator ++(ipadresse adresse)
         {
-            ulong ein = adresse._erstOktet;
-            ulong zwei = adresse._zweiteOktet;
-            ulong drei = adresse._dritteOktet;
-            ulong vier = adresse._vierteOktet;
+            uint ein = adresse._erstOktet;
+            uint zwei = adresse._zweiteOktet;
+            uint drei = adresse._dritteOktet;
+            uint vier = adresse._vierteOktet;
             bool nachsteOktet = true;
             if(vier >= 255)
             {
@@ -61,6 +129,9 @@ namespace Operatoruberladung.Models
                 if(ein < 255)
                 {
                     ein++;
+                } else
+                {
+                    Console.WriteLine("NOPE, adresse 256.0.0.0 existiert nicht");
                 }
                 nachsteOktet = false;
             } 
@@ -82,6 +153,55 @@ namespace Operatoruberladung.Models
                 ein++;
             }
             return new ipadresse(ein, zwei, drei, vier);
+        }
+
+        public static bool operator ==(ipadresse erst, ipadresse zwei)
+        {
+            if(erst._erstOktet == zwei._erstOktet && 
+                erst._zweiteOktet == zwei._zweiteOktet &&
+                erst._dritteOktet == zwei._dritteOktet &&
+                erst._vierteOktet == zwei._vierteOktet)
+            {
+                return true;
+            } else
+            {
+                return false;
+            }
+        }
+
+        public static bool operator !=(ipadresse erst, ipadresse zwei)
+        {
+            if (erst._erstOktet != zwei._erstOktet ||
+                erst._zweiteOktet != zwei._zweiteOktet ||
+                erst._dritteOktet != zwei._dritteOktet ||
+                erst._vierteOktet != zwei._vierteOktet)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static ipadresse InsertIP(string insert)
+        {
+            try
+            {
+                string[] separated = insert.Split('.');
+                uint[] ips = new uint[separated.Length];
+                for (int i = 0; i < separated.Length; i++)
+                {
+                    ips[i] = uint.Parse(separated[i]);
+                }
+                Console.WriteLine($"IP - {ips[0]}.{ips[1]}.{ips[2]}.{ips[3]} - created");
+                return new ipadresse(ips[0], ips[1], ips[2], ips[3]);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Falsche eingabe du ****");
+                return null;
+            }
         }
     }
 }

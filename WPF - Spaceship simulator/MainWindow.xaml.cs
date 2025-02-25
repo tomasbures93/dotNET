@@ -22,11 +22,17 @@ namespace WPF___Spaceship_simulator
             InitializeComponent();
             startgame = false;
             pause = false;
-            player = new Playership();
             Menu.Visibility = Visibility.Visible;
             MainView.Visibility = Visibility.Collapsed;
-            Canvas.SetBottom(ship, player.X);
-            Canvas.SetBottom(ship, player.Y);
+            LoadShips();
+        }
+
+        public void LoadShips()
+        {
+            player = new Playership();
+            space.Children.Add(player.Sprite);
+            Canvas.SetLeft(player.Sprite, player.X);
+            Canvas.SetBottom(player.Sprite, player.Y);
         }
 
         private void space_KeyDown(object sender, KeyEventArgs e)
@@ -39,37 +45,37 @@ namespace WPF___Spaceship_simulator
             if (e.Key == Key.Right && e.Key == Key.Down)
             {
                 player.MoveRight();
-                Canvas.SetLeft(ship, player.X);
+                Canvas.SetLeft(player.Sprite, player.X);
                 player.MoveUp();
-                Canvas.SetBottom(ship, player.Y);
+                Canvas.SetBottom(player.Sprite, player.Y);
             }
             if (e.Key == Key.Right && e.Key == Key.Up)
             {
                 player.MoveRight();
-                Canvas.SetLeft(ship, player.X);
+                Canvas.SetLeft(player.Sprite, player.X);
                 player.MoveDown();
-                Canvas.SetBottom(ship, player.Y);
+                Canvas.SetBottom(player.Sprite, player.Y);
             }
             if (e.Key == Key.Left && e.Key == Key.Up)
             {
                 player.MoveLeft();
-                Canvas.SetLeft(ship, player.X);
+                Canvas.SetLeft(player.Sprite, player.X);
                 player.MoveDown();
-                Canvas.SetBottom(ship, player.Y);
+                Canvas.SetBottom(player.Sprite, player.Y);
             }
             if (e.Key == Key.Left && e.Key == Key.Down)
             {
                 player.MoveLeft();
-                Canvas.SetLeft(ship, player.X);
+                Canvas.SetLeft(player.Sprite, player.X);
                 player.MoveUp();
-                Canvas.SetBottom(ship, player.Y);
+                Canvas.SetBottom(player.Sprite, player.Y);
             }
             if (e.Key == Key.Left)
             {
                 if(player.X > 0)
                 {
                     player.MoveLeft();
-                    Canvas.SetLeft(ship, player.X);
+                    Canvas.SetLeft(player.Sprite, player.X);
                 }
             }
             if(e.Key == Key.Right)
@@ -77,23 +83,23 @@ namespace WPF___Spaceship_simulator
                 if(player.X < 700)
                 {
                     player.MoveRight();
-                    Canvas.SetLeft(ship, player.X);
+                    Canvas.SetLeft(player.Sprite, player.X);
                 }
             }
             if(e.Key == Key.Down)
             {
-                if(Canvas.GetBottom(ship) > 10)
+                if(Canvas.GetBottom(player.Sprite) > 10)
                 {
                     player.MoveUp();
-                    Canvas.SetBottom(ship, player.Y);
+                    Canvas.SetBottom(player.Sprite, player.Y);
                 }
             }
             if(e.Key == Key.Up)
             {
-                if(Canvas.GetBottom(ship) < 150)
+                if(Canvas.GetBottom(player.Sprite) < 150)
                 {
                     player.MoveDown();
-                    Canvas.SetBottom(ship, player.Y);
+                    Canvas.SetBottom(player.Sprite, player.Y);
                 }
             }
             if(e.Key == Key.Escape)
