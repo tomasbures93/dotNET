@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Indexer - Simple List", "In
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections - Lesen datei backwards", "Collections\Collections - Lesen datei backwards.csproj", "{B679A26F-92AA-40E2-9BB5-B5308E4D9D3E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections - Dictionary", "Collections - Dictionary\Collections - Dictionary.csproj", "{A89A9E98-4A90-42C2-B5CB-DB02C450C162}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collections - Schach", "Collections - Schach\Collections - Schach.csproj", "{3FDE09C8-A9D3-4773-AEB0-2D5D9A744908}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{B679A26F-92AA-40E2-9BB5-B5308E4D9D3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B679A26F-92AA-40E2-9BB5-B5308E4D9D3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B679A26F-92AA-40E2-9BB5-B5308E4D9D3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A89A9E98-4A90-42C2-B5CB-DB02C450C162}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A89A9E98-4A90-42C2-B5CB-DB02C450C162}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A89A9E98-4A90-42C2-B5CB-DB02C450C162}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A89A9E98-4A90-42C2-B5CB-DB02C450C162}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDE09C8-A9D3-4773-AEB0-2D5D9A744908}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDE09C8-A9D3-4773-AEB0-2D5D9A744908}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDE09C8-A9D3-4773-AEB0-2D5D9A744908}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDE09C8-A9D3-4773-AEB0-2D5D9A744908}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

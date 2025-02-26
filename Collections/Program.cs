@@ -5,20 +5,20 @@
         static void Main(string[] args)
         {
             string pfad = @"C:\Users\ITA7-TN01\Desktop\abc.txt";
-            List<string> inhalt = new List<string>();
+            Stack<string> inhalt = new Stack<string>();
 
             FileStream stream = new FileStream(pfad, FileMode.Open, FileAccess.Read);
             StreamReader sr = new StreamReader(stream);
 
             while(sr.Peek() >= 0)
             {
-                inhalt.Add(sr.ReadLine());
+                inhalt.Push(sr.ReadLine());
             }
             sr.Close();
-            inhalt.Reverse();
+            // Bearbeiten
             foreach (string s in inhalt)
             {
-                Console.WriteLine(s);
+                inhalt.Pop();
             }
 
 
