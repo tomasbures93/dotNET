@@ -11,8 +11,7 @@ namespace Events___WarpKern.Models
     {
 
         public WarpkernConsole(WarpKern warpKern) {
-            warpKern.TempEvent += CheckEventTemp;
-            warpKern.TempEventFuckedup += Explosion;
+            
         }
         public void CheckEventTemp(object sender, TemperaturEventArgs e)
         {

@@ -20,13 +20,15 @@ namespace Events___WarpKern.Models
             { return _warpkernTemperatur; }
             set
             {
-                if (TempEvent != null)
+                _warpkernTemperatur = value;
+                if (TempEvent != null && TempEventFuckedup != null)
                 {
-                    _warpkernTemperatur = value;
                     if (value < 499)
                     {
                         TempEvent(this, new TemperaturEventArgs(value));
-                    } else
+                        // geht auch mit TempEvent?.Invoke(this, new TemperaturEventArgs(value));       ? prüft ob es nicht null
+                    }
+                    else
                     {
                         TempEventFuckedup(this, new TemperaturEventArgs(value));
                     }
