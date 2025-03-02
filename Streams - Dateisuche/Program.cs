@@ -4,9 +4,15 @@
     {
         static void Main(string[] args)
         {
+            // Variablen und Pfad
+            string ordner = @"C:\Users\Furci\Desktop\test";
+            string datei = @"\log.txt";
+            string pfad = ordner + datei;
             string text = "";
             string input;
             string datum;
+
+            // Eingabe von text
             do
             {
                 Console.WriteLine("Geben sie beliebige text ein! ( . ) am ende speicher das eingabe");
@@ -18,18 +24,20 @@
                     break;
                 } 
             } while (true);
-
-            string ordner = @"C:\Users\ITA7-TN01\Desktop\Suche";
-            string datei = @"\pica.txt";
-            string pfad = ordner + datei;
-            Console.WriteLine(pfad);
+            
+            // Gucken ob ordner existiert
             DirectoryInfo di = new DirectoryInfo(ordner);
             if (di.Exists)
             {
                 using (StreamWriter sw = new StreamWriter(pfad, true))
                 {
                     sw.WriteLine(datum + ": " + text);
+                    Console.WriteLine($"{datum} | {text}");
                 }
+            }
+            else
+            {
+                Console.WriteLine($"{ordner} Existier nicht!");
             }
         }
     }

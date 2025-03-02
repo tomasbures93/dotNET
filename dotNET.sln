@@ -57,7 +57,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events - Trigger", "Events 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams - Dateisuche", "Streams - Dateisuche\Streams - Dateisuche.csproj", "{F6F89E70-3194-4BA4-ADB0-D65456AB323B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stream - FileSystemWatcher", "Stream - FileSystemWatcher\Stream - FileSystemWatcher.csproj", "{B6C52634-11BC-4877-AADD-3D6DB32FC52D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams - FileSystemWatcher", "Stream - FileSystemWatcher\Streams - FileSystemWatcher.csproj", "{B6C52634-11BC-4877-AADD-3D6DB32FC52D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,5 +180,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {59FA6FE6-E449-48F0-808D-29EAC0E9E7CC}
 	EndGlobalSection
 EndGlobal
