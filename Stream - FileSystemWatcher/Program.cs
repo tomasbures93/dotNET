@@ -4,14 +4,14 @@ namespace Stream___FileSystemWatcher
 {
     internal class Program
     {
-        static string ordner = @"C:\Users\Furci\Desktop\test";
+        static string ordner = @"C:\Users\ITA7-TN01\Desktop\Suche";
         static int counter = 0;
         static void Main(string[] args)
         {
             Console.WriteLine("Program start - Verzeichniss beobachtung.");
             Console.WriteLine($"{ordner} wird beobachtet !!");
 
-            using var watcher = new FileSystemWatcher(ordner);
+            using FileSystemWatcher watcher = new FileSystemWatcher(ordner);
 
             // Was für enderungen wir beobachten
             watcher.NotifyFilter = NotifyFilters.Attributes         // Überwacht Änderungen an den Dateiattributen (z. B. "Schreibgeschützt", "Versteckt" usw.).
@@ -24,6 +24,7 @@ namespace Stream___FileSystemWatcher
                                  | NotifyFilters.Size;              // Überwacht Änderungen an der Dateigröße.
 
             watcher.Filter = "*.lookup";        // Was wir wollen beobachten
+
             Console.WriteLine($"Looking for {watcher.Filter}");
             Console.WriteLine("-----------------------------------------");
 
@@ -32,6 +33,7 @@ namespace Stream___FileSystemWatcher
             //watcher.Renamed += OnRenamed;
             //watcher.Deleted += OnDeleted;
 
+            // begint beobachtung
             watcher.EnableRaisingEvents = true;
 
             Console.WriteLine("Press enter to exit.");
@@ -64,7 +66,6 @@ namespace Stream___FileSystemWatcher
                 Console.WriteLine($"List leer!");
             } else
             {
-                Console.WriteLine($"Datei saving start");
                 using (StreamWriter wf = new StreamWriter(pfad))
                 {
                     foreach(string text in resolved)
@@ -88,7 +89,6 @@ namespace Stream___FileSystemWatcher
                 
                 while ((line = sr.ReadLine()) != null)
                 { 
-                    // I have IP adresses in datei
                     Console.Write($"Processing IP: {line} | ");
                     try
                     {
@@ -105,7 +105,5 @@ namespace Stream___FileSystemWatcher
             Console.WriteLine("****");
             SaveResolved(resolved, e.Name);
         }
-
-       
     }
 }

@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             // Variablen und Pfad
-            string ordner = @"C:\Users\Furci\Desktop\test";
+            string ordner = @"C:\Users\ITA7-TN01\Desktop\Suche";
             string datei = @"\log.txt";
             string pfad = ordner + datei;
             string text = "";
