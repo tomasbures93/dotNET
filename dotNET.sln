@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics - BinarySearchTree
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinarySearchTree", "BinarySearchTree\BinarySearchTree.csproj", "{426C683F-AE93-485C-888A-C4697E2FC50A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extra - ChecksumCalculator", "Extra - ChecksumCalculator\Extra - ChecksumCalculator.csproj", "{D1AB9910-369C-40BE-ADCB-E1DF6526F11C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extra - ChecksumCalculator WPF", "Extra - ChecksumCalculator\Extra - ChecksumCalculator WPF.csproj", "{D1AB9910-369C-40BE-ADCB-E1DF6526F11C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF - Spaceship simulator", "WPF - Spaceship simulator\WPF - Spaceship simulator.csproj", "{C4AE3000-C34B-47F8-862F-D85E0E4A9775}"
 EndProject
@@ -58,6 +58,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams - Dateisuche", "Streams - Dateisuche\Streams - Dateisuche.csproj", "{F6F89E70-3194-4BA4-ADB0-D65456AB323B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Streams - FileSystemWatcher", "Stream - FileSystemWatcher\Streams - FileSystemWatcher.csproj", "{B6C52634-11BC-4877-AADD-3D6DB32FC52D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON - Verzeichnisinformationen", "JSON - Verzeichnisinformationen\JSON - Verzeichnisinformationen.csproj", "{D6AF14EB-CA74-4D68-8E14-B54BB3402D7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON - Produkte WPF", "JSON - Produkte\JSON - Produkte WPF.csproj", "{821FD492-0424-4EA2-95AD-A09F0421DD54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JSON - FizzBuzz deserial", "JSON - FizzBuzz deserial\JSON - FizzBuzz deserial.csproj", "{CF66C13F-1037-470C-A846-6E9839D5D563}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Erweiterungsmethoden -  Erweiterung der Klasse String", "Erweiterungsmethoden -  Erweiterung der Klasse String\Erweiterungsmethoden -  Erweiterung der Klasse String.csproj", "{BAC7ED9E-283A-4F99-BC24-43B8C4691C51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -177,6 +185,22 @@ Global
 		{B6C52634-11BC-4877-AADD-3D6DB32FC52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B6C52634-11BC-4877-AADD-3D6DB32FC52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B6C52634-11BC-4877-AADD-3D6DB32FC52D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6AF14EB-CA74-4D68-8E14-B54BB3402D7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6AF14EB-CA74-4D68-8E14-B54BB3402D7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6AF14EB-CA74-4D68-8E14-B54BB3402D7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6AF14EB-CA74-4D68-8E14-B54BB3402D7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{821FD492-0424-4EA2-95AD-A09F0421DD54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{821FD492-0424-4EA2-95AD-A09F0421DD54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{821FD492-0424-4EA2-95AD-A09F0421DD54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{821FD492-0424-4EA2-95AD-A09F0421DD54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF66C13F-1037-470C-A846-6E9839D5D563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF66C13F-1037-470C-A846-6E9839D5D563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF66C13F-1037-470C-A846-6E9839D5D563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF66C13F-1037-470C-A846-6E9839D5D563}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAC7ED9E-283A-4F99-BC24-43B8C4691C51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAC7ED9E-283A-4F99-BC24-43B8C4691C51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAC7ED9E-283A-4F99-BC24-43B8C4691C51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAC7ED9E-283A-4F99-BC24-43B8C4691C51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
