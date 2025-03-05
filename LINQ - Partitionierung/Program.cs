@@ -15,11 +15,11 @@
             Console.WriteLine(string.Join(',', letztefunf));
 
             // 3.	Ermitteln Sie alle Elemente, bis auf die ersten und letzten drei Elemente 
-            var erstundletzteweg = numbers.Skip(1).Take(numbers.Length - 2);
+            var erstundletzteweg = numbers.Skip(3).Take(numbers.Length - 6);
             Console.WriteLine(string.Join(',', erstundletzteweg));
 
-            // 4.	Ermitteln Sie alle Elemente, beginnend vom ersten Element, die größer als 0 sind
-            var vier = numbers.Where(x => x > 0);
+            // 4.	Ermitteln Sie alle Elemente, beginnend vom ersten Element, solange die größer als 0 sind
+            var vier = numbers.TakeWhile(x => x > 0);
             Console.WriteLine(string.Join(',', vier));
 
             // 5.	Ermitteln Sie alle Elemente, beginnend vom ersten Element, die nach der 12 im Array stehen
@@ -35,13 +35,29 @@
             {
                 DateiList.Add((dateiinfo.CreationTime, dateiinfo.Name));
             }
-            var erstefunfdateien = DateiList.OrderByDescending(datum => datum.Item1).ThenBy(name => name.Item2).Take(5);
+            var erstefunfdateien = DateiList
+                                    .OrderByDescending(datum => datum.Item1)
+                                    //.ThenBy(name => name.Item2)
+                                    .Take(5);
             Console.WriteLine(string.Join("\n", erstefunfdateien));
 
             // 8.	Listen Sie alle Dateien in dem Verzeichnis in „Seiten“ zu je 5 Dateien auf
 
             DirectoryInfo info2 = new DirectoryInfo(@"C:\Users\ITA7-TN01\Desktop\Linux");
-            // ???
+            int pageSize = 5;
+            for( int pageNumber = 0; 
+                pageNumber < Math.Ceiling(info2.GetFiles().Count()/(double)pageSize); 
+                pageNumber++)
+            {
+                Console.WriteLine($"Page: {pageNumber + 1}");
+                foreach (var item in info2.GetFiles()
+                                         .Skip(pageNumber * pageSize).Take(pageSize))
+                {
+                    Console.WriteLine(item.Name);
+                }
+            }
+ 
+                
         }
     }
 }
