@@ -12,10 +12,7 @@ namespace Erweiterungsmethoden____Erweiterung_der_Klasse_String.Models
         {
             try
             {
-                if (int.TryParse(str, out int result))
-                {
-                    return result;
-                }
+                return int.Parse(str);
             }
             catch (Exception ex)
             {
@@ -36,9 +33,16 @@ namespace Erweiterungsmethoden____Erweiterung_der_Klasse_String.Models
             return output;
         }
 
-        // Fertig machen!!
-        public static bool IsPlaindrome(this string str)
+        public static bool IsPalindrome(this string str)
         {
+            char[] word = str.ToLower().ToCharArray();
+            for (int i = 0; i < str.Length / 2; i++)
+            {
+                if (word[i] != word[str.Length - 1 - i])
+                {
+                    return false;
+                }
+            }
             return true;
         }
     }

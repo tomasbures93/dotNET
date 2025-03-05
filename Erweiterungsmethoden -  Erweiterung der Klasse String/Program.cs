@@ -6,11 +6,16 @@ namespace Erweiterungsmethoden____Erweiterung_der_Klasse_String
     {
         static void Main(string[] args)
         {
-            string haloo = "10";
+            string haloo = "abg";
             Console.WriteLine(haloo.ToInt32());
+            string halloo = "10";
+            Console.WriteLine(halloo.ToInt32());
 
             string hallo = "hallo";
             Console.WriteLine(hallo.ReverseString());
+
+            string palindrom = "kokokttkokok";
+            Console.WriteLine($"Ist {palindrom} ein Palindrom ? {palindrom.IsPalindrome()}");
         }
     }
 }
