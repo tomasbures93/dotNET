@@ -1,4 +1,5 @@
 ﻿using LINQ___Durchschnitt_von_kategorien.Models;
+using System.Text;
 
 namespace LINQ___Durchschnitt_von_kategorien
 {
@@ -6,8 +7,11 @@ namespace LINQ___Durchschnitt_von_kategorien
     {
         static void Main(string[] args)
         {
+            Console.OutputEncoding = Encoding.UTF8;
             var produkts = LoadData();
             ShowProducts(produkts);
+            Console.WriteLine();
+
             // Das Programm soll für jede Produktkategorie den Durchschnittspreis ermitteln.
 
             var durchschnittPrice = produkts.GroupBy(p => p.Category)
@@ -34,7 +38,7 @@ namespace LINQ___Durchschnitt_von_kategorien
         public static List<Produkt> LoadData()
         {
             List<Produkt> produkts = new List<Produkt>();
-            string path = @"C:\Users\Burcis\Desktop\produkts.txt";
+            string path = @"C:\Users\ITA7-TN01\Desktop\produkts.txt";
             try
             {
                 using (StreamReader sr = new StreamReader(path))
@@ -44,7 +48,6 @@ namespace LINQ___Durchschnitt_von_kategorien
                     {
                         string[] strings = line.Split(';');
                         produkts.Add(new Produkt(strings[0], double.Parse(strings[1].Replace('.', ',')), strings[2].Trim()));
-
                     }
                     return produkts;
                 }

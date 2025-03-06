@@ -40,7 +40,7 @@ namespace LINQ___Durchschnitt_von_kategorien.Models
 
         public override string ToString()
         {
-            return $"{Name,-18} | $ {Price, 8} | {Category,12}";
+            return $"{Name,-18} | $ {Price,8:F2} | {Category,12}";
         }
     }
 }
