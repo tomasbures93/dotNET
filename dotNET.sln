@@ -91,6 +91,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datenbank - Erste Zugriff",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datenbank - Erste Aufgabe", "Datenbank - Erste Aufgabe\Datenbank - Erste Aufgabe.csproj", "{8D7749C1-92B5-42A3-9D12-9A8EEA21100D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datenbank - Entity Framework", "Datenbank - Entity Framework\Datenbank - Entity Framework.csproj", "{FD695161-92D2-41A8-B8F2-EC8236AE4DF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datenbank - Kleine Firma", "Datenbank - Kleine Firma\Datenbank - Kleine Firma.csproj", "{573CD531-02C0-48C2-8166-A2A561A955F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datenbank - BucherDB und Migration", "Datenbank - BucherDB und Migration\Datenbank - BucherDB und Migration.csproj", "{602BACAF-8380-4C48-A51E-C206B4EFA8BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -273,6 +279,18 @@ Global
 		{8D7749C1-92B5-42A3-9D12-9A8EEA21100D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D7749C1-92B5-42A3-9D12-9A8EEA21100D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D7749C1-92B5-42A3-9D12-9A8EEA21100D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD695161-92D2-41A8-B8F2-EC8236AE4DF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD695161-92D2-41A8-B8F2-EC8236AE4DF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD695161-92D2-41A8-B8F2-EC8236AE4DF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD695161-92D2-41A8-B8F2-EC8236AE4DF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{573CD531-02C0-48C2-8166-A2A561A955F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{573CD531-02C0-48C2-8166-A2A561A955F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{573CD531-02C0-48C2-8166-A2A561A955F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{573CD531-02C0-48C2-8166-A2A561A955F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{602BACAF-8380-4C48-A51E-C206B4EFA8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{602BACAF-8380-4C48-A51E-C206B4EFA8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{602BACAF-8380-4C48-A51E-C206B4EFA8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{602BACAF-8380-4C48-A51E-C206B4EFA8BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
