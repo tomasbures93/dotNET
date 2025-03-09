@@ -97,6 +97,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datenbank - Kleine Firma", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datenbank - BucherDB und Migration", "Datenbank - BucherDB und Migration\Datenbank - BucherDB und Migration.csproj", "{602BACAF-8380-4C48-A51E-C206B4EFA8BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database - SQLite", "Database - SQLite\Database - SQLite.csproj", "{9BD9B294-5A03-4338-A61A-8D6A85CD123B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -291,6 +293,10 @@ Global
 		{602BACAF-8380-4C48-A51E-C206B4EFA8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{602BACAF-8380-4C48-A51E-C206B4EFA8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{602BACAF-8380-4C48-A51E-C206B4EFA8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD9B294-5A03-4338-A61A-8D6A85CD123B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD9B294-5A03-4338-A61A-8D6A85CD123B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD9B294-5A03-4338-A61A-8D6A85CD123B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD9B294-5A03-4338-A61A-8D6A85CD123B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
