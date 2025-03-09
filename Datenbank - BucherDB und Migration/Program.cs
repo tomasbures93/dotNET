@@ -1,7 +1,7 @@
 ﻿
 
 using Datenbank___BucherDB_und_Migration.Models;
-
+// Projekt corrupted oder sowas .
 namespace Datenbank___BucherDB_und_Migration
 {
     internal class Program
