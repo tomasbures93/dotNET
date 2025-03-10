@@ -29,7 +29,7 @@ namespace Datenbank___Migration.Models
 
         [Required]
         [MaxLength(30)]
-        public string ReleaseDatum
+        public string PublishDate
         {
             get;
             set;
@@ -46,8 +46,10 @@ namespace Datenbank___Migration.Models
             get;
             set;
         }
+        /*
+         * public virtual override Verlag Verlag {get, set;}
+         */
 
-        [ForeignKey("Verlag")]
         public int? VerlagID
         {
             get;

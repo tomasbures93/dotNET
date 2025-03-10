@@ -3,6 +3,7 @@ using Datenbank___Migration.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Datenbank___Migration.Migrations
 {
     [DbContext(typeof(BuchDBContext))]
-    partial class BuchDBContextModelSnapshot : ModelSnapshot
+    [Migration("20250310075222_DescriptionByVerlag")]
+    partial class DescriptionByVerlag
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,9 +88,6 @@ namespace Datenbank___Migration.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Score")
-                        .HasColumnType("int");
 
                     b.HasKey("ID");
 

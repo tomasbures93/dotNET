@@ -22,8 +22,8 @@ namespace Datenbank___Migration.Models
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Buch>().HasData(
-                new Buch { ID = 1, Titel = "Beste Buch", ReleaseDatum = "1.1.1111" },
-                new Buch { ID = 2, Titel = "Buch nummer 2", ReleaseDatum = "2.2.2222 " }
+                new Buch { ID = 1, Titel = "Beste Buch", PublishDate = "1.1.1111" },
+                new Buch { ID = 2, Titel = "Buch nummer 2", PublishDate = "2.2.2222 " }
                 );
         }
     }

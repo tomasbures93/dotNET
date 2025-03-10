@@ -24,9 +24,9 @@ namespace Datenbank___Migration
             context.SaveChanges();
 
             //Buch newBook = new Buch
-            //{ 
+            //{
             //    Titel = "Book 3",
-            //    ReleaseDatum = "2.2.3333",
+            //    PublishDate = "2.2.3333",
             //    Language = "Chinese",
             //    Pages = 50
             //};
@@ -57,14 +57,37 @@ namespace Datenbank___Migration
 
             foreach (var b in context.Books)
             {
-                Console.WriteLine($"{b.ID} | {b.Titel} | {b.ReleaseDatum} | {b.Language} | {b.Pages} | {b.VerlagID}");
+                Console.WriteLine($"{b.ID} | {b.Titel} | {b.PublishDate} | {b.Language} | {b.Pages} | {b.VerlagID}");
             }
 
             Console.WriteLine();
 
             foreach(var v in context.Verlags)
             {
-                Console.WriteLine($"{v.ID} | {v.Name}");
+                if(v.Description == "Please Change")
+                {
+                    Console.WriteLine($"Verlag ID:{v.ID} Description has to be Changed!!!!!");
+                    Console.WriteLine($"{v.ID} | {v.Name} | {v.Description} | {v.Score}");
+                } else
+                {
+                    Console.WriteLine($"{v.ID} | {v.Name} | {v.Description} | {v.Score}");
+                }
+            }
+
+            var updateVerlag = context.Verlags.Where(v => v.ID == 1).FirstOrDefault();
+            updateVerlag.Description = "Etwas test daten";
+            context.SaveChanges();
+            Console.WriteLine();
+            foreach (var v in context.Verlags)
+            {
+                if (v.Description == "Please Change")
+                {
+                    Console.WriteLine($"Verlag ID:{v.ID} Description has to be Changed!!!!!");
+                    Console.WriteLine($"{v.ID} | {v.Name} | {v.Description} | {v.Score}");
+                } else
+                {
+                    Console.WriteLine($"{v.ID} | {v.Name} | {v.Description} | {v.Score}");
+                }
             }
         }
     }

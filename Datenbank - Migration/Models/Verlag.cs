@@ -16,5 +16,10 @@ namespace Datenbank___Migration.Models
 
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        public string Description { get; set; }
+
+        public int? Score { get; set; }
     }
 }
