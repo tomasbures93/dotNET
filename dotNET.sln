@@ -109,6 +109,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads - PI berechnen", "T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads - Graustufe ( Bild in grau weiß imwandeln )", "Threads - Graustufe ( Bild in grau weiß imwandeln )\Threads - Graustufe ( Bild in grau weiß imwandeln ).csproj", "{4A67F7DE-5848-4403-A21B-EE85D5EF475C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads - DNS-Auflösung und HTML-Tags", "Threads - DNS-Auflösung und HTML-Tags\Threads - DNS-Auflösung und HTML-Tags.csproj", "{2AC8A2A3-E4A1-4296-84F6-0BFB1A06941F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads - PI Berechnen Async und Await", "Threads - PI Berechnen Async und Await\Threads - PI Berechnen Async und Await.csproj", "{6EFD15C5-139A-4CB1-9B24-FB2A9CD0D442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads - FavIcon - WPF", "Threads - FavIcon - WPF\Threads - FavIcon - WPF.csproj", "{FBD0086F-A9F1-4E4B-B833-5467D97415DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -327,6 +333,18 @@ Global
 		{4A67F7DE-5848-4403-A21B-EE85D5EF475C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4A67F7DE-5848-4403-A21B-EE85D5EF475C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4A67F7DE-5848-4403-A21B-EE85D5EF475C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AC8A2A3-E4A1-4296-84F6-0BFB1A06941F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AC8A2A3-E4A1-4296-84F6-0BFB1A06941F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AC8A2A3-E4A1-4296-84F6-0BFB1A06941F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AC8A2A3-E4A1-4296-84F6-0BFB1A06941F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EFD15C5-139A-4CB1-9B24-FB2A9CD0D442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EFD15C5-139A-4CB1-9B24-FB2A9CD0D442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EFD15C5-139A-4CB1-9B24-FB2A9CD0D442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EFD15C5-139A-4CB1-9B24-FB2A9CD0D442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBD0086F-A9F1-4E4B-B833-5467D97415DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBD0086F-A9F1-4E4B-B833-5467D97415DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBD0086F-A9F1-4E4B-B833-5467D97415DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBD0086F-A9F1-4E4B-B833-5467D97415DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
