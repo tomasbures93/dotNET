@@ -68,16 +68,14 @@ namespace Threads___FavIcon___WPF
                     });
                     this.Cursor = Cursors.Arrow;
                     downloadButton.IsEnabled = true;
-                    stopDownload.IsEnabled = false;
                 }
                 catch (Exception ex)
                 {
                     this.Cursor = Cursors.Arrow;
                     downloadButton.IsEnabled = true;
-                    stopDownload.IsEnabled = false;
                 }
-                
             }
+            stopDownload.IsEnabled = false;
         }
 
         private async void iconDownload(string url, CancellationToken token)
@@ -110,6 +108,11 @@ namespace Threads___FavIcon___WPF
                 }
                 catch (HttpRequestException ex)
                 {
+                    Application.Current.Dispatcher.Invoke(() =>
+                    {
+                        ausnahme.AppendText(ex.Message);
+                    });
+                    
                 }
 
             }
@@ -118,6 +121,11 @@ namespace Threads___FavIcon___WPF
         private void stopDownload_Click(object sender, RoutedEventArgs e)
         {
             cts.Cancel();
+        }
+
+        private void clearIcons_Click(object sender, RoutedEventArgs e)
+        {
+            stackPanelImages.Children.Clear();
         }
     }
 }
