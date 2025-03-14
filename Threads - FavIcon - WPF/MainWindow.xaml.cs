@@ -29,6 +29,7 @@ namespace Threads___FavIcon___WPF
             {
                 ListBox1Websites.Items.Add(site);
             }
+
             stopDownload.IsEnabled = false;
         }
 
@@ -57,15 +58,13 @@ namespace Threads___FavIcon___WPF
             this.Cursor = Cursors.Wait;
             downloadButton.IsEnabled = false;
             stopDownload.IsEnabled = true;
+            cts = new CancellationTokenSource();
             foreach (var site in websites)
             {
                 try
                 {
-                    cts = new CancellationTokenSource();
                     await Task.Run(() =>
-                    {
-                        iconDownload(site, cts.Token);
-                    });
+                        iconDownload(site, cts.Token), cts.Token);
                     this.Cursor = Cursors.Arrow;
                     downloadButton.IsEnabled = true;
                 }
@@ -78,24 +77,37 @@ namespace Threads___FavIcon___WPF
             stopDownload.IsEnabled = false;
         }
 
-        private async void iconDownload(string url, CancellationToken token)
+        private void iconDownload(string url, CancellationToken token)
         {
             using (HttpClient client = new HttpClient())
             {  
                 try
                 {
-                    if (token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-                    var array = await client.GetByteArrayAsync("https://www." + url + "/favicon.ico");
+                    token.ThrowIfCancellationRequested();
+
+                    var array = client.GetByteArrayAsync("https://www." + url + "/favicon.ico");
                     BitmapImage img = null;
-                    Application.Current.Dispatcher.Invoke(() =>
+
+                    try
                     {
-                        img = ByteArrayToBitmapImage(array);
-                    });
+                        if(array.Result != null)
+                        {
+                            Application.Current.Dispatcher.Invoke(() =>
+                            {
+                                img = ByteArrayToBitmapImage(array.Result);
+                            });
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Application.Current.Dispatcher.Invoke(() =>
+                        ausnahme.AppendText(ex.Message + "\n")
+                        );
+                    }
+                    
                     if (img != null)
                     {
+                        // Generating Picture and Adding it into Stackpanel
                         Application.Current.Dispatcher.Invoke(() =>
                         {
                             Image image = new Image();
@@ -103,8 +115,9 @@ namespace Threads___FavIcon___WPF
                             image.Width = 32;
                             image.Height = 32;
                             stackPanelImages.Children.Add(image);
-                        }); // Sicherstellen, dass die UI nicht crasht
+                        }); 
                     }
+
                 }
                 catch (HttpRequestException ex)
                 {
@@ -112,20 +125,20 @@ namespace Threads___FavIcon___WPF
                     {
                         ausnahme.AppendText(ex.Message);
                     });
-                    
                 }
-
             }
         }
 
         private void stopDownload_Click(object sender, RoutedEventArgs e)
         {
             cts.Cancel();
+            ausnahme.AppendText("Cancel button pressed!");
         }
 
         private void clearIcons_Click(object sender, RoutedEventArgs e)
         {
             stackPanelImages.Children.Clear();
+            ausnahme.Text = string.Empty;
         }
     }
 }
